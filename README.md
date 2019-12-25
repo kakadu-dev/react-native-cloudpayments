@@ -20,26 +20,35 @@ react-native link react-native-cloudpayments
 ```
 
 # Methods
-### isValidCard()
-Validate card.
+### isValidNumber()
+Validate card number.
 Returns a `Promise` that resolve card status (`Boolean`).
 
 __Arguments__
 - `cardNumber` - `String` Number of payment card.
-- `cardExp` - `String` Expire date of payment card.
-- `cardCvv` - `String` CVV code of payment card.
 
 __Examples__
 ```js
 import RNCloudPayment from 'react-native-cloudpayments';
 
-const demoCard = {
-  number: '5105105105105100',
-  extDate: '10/18',
-  cvvCode: '123',
-};
+RNCloudPayment.isValidNumber('5105105105105100')
+  .then(cardStatus => {
+    console.log(cardStatus); // true
+  });
+```
 
-RNCloudPayment.isValidCard(demoCard.number, demoCard.extDate, demoCard.cvvCode)
+### isValidExpired()
+Validate card expired.
+Returns a `Promise` that resolve card status (`Boolean`).
+
+__Arguments__
+- `cardExp` - `String` Expire date of payment card.
+
+__Examples__
+```js
+import RNCloudPayment from 'react-native-cloudpayments';
+
+RNCloudPayment.isValidExpired('11/21')
   .then(cardStatus => {
     console.log(cardStatus); // true
   });
@@ -103,6 +112,25 @@ const publicId = 'pk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 RNCloudPayment.createCryptogram(demoCard.number, demoCard.extDate, demoCard.cvvCode, publicId)
   .then(cryptogram => {
     console.log(cryptogram); // 025105105100/11004bpp9ltxt6c0jpdk8ErH+N33N9jZBm9Gr0jO7SVslLg/RdWYyjG5wiLrzmrUserhfblFVydij4wpjDvHH4kRnOskjnbn1XrPI8X9LMkvlR5Pkc63U5puXtnS0rkswS6JYaSErcKMq4TazimKY4rGobvhhYfg45LWdLlX0602t7ZybbaBTMff6wtta870/244s65GTbCI1zt6odDMckpEuiczwM68m6j0Rn2IuKpK8kR58x7tFFc7fWrrW0RHvLNxQIW9P+SpsySoiA4xaZfC7lXL57O80Ye6JDi6PWAim5dENNxIc81T1kmXnKn94x8h2+XS83yMHHfTUOeDb7J1fLg==
+  });
+```
+
+### show3DS()
+Show 3ds secure.
+Returns a `Promise` that resolve cryptogram (`Object`).
+
+__Arguments__
+- `url` - `String` Url redirect.
+- `transactionId` - `String` Transaction ID.
+- `token` - `String` Token.
+
+__Examples__
+```js
+import RNCloudPayment from 'react-native-cloudpayments';
+
+RNCloudPayment.show3DS('https://demo.cloudpayments.ru', '1237618734', '....1d3d22r..')
+  .then(result => {
+    console.log(result); 
   });
 ```
 

@@ -3,12 +3,20 @@ import { NativeModules } from 'react-native';
 const RNCloudPaymentsModule = NativeModules.RNCloudPayments;
 
 export default class RNCloudPayments {
-  static async isValidCard(cardNumber, cardExp, cardCvv) {
+  static async isValidNumber(cardNumber) {
     try {
-      return await RNCloudPaymentsModule.isValidNumber(cardNumber, cardExp, cardCvv);
+      return await RNCloudPaymentsModule.isValidNumber(cardNumber);
     } catch(error) {
       return createError(error);
     }
+  }
+
+  static async isValidExpired(cardExp) {
+	try {
+		return await RNCloudPaymentsModule.isValidExpired(cardExp);
+	} catch(error) {
+		return createError(error);
+	}
   }
 
   static async getType(cardNumber, cardExp, cardCvv) {
@@ -25,6 +33,14 @@ export default class RNCloudPayments {
     } catch(error) {
       return createError(error);
     }
+  }
+
+  static async show3DS(acsUrl, paReq, transactionId) {
+	try {
+		return await RNCloudPaymentsModule.show3DS(acsUrl, paReq, transactionId);
+	} catch(error) {
+		return createError(error);
+	}
   }
 }
 

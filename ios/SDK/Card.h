@@ -15,6 +15,8 @@ typedef enum {
 
 +(BOOL) isCardNumberValid: (NSString *) cardNumberString;
 
++(BOOL) isExpiredValid: (NSString *) expiredString;
+
 /**
  * Create cryptogram
  *    cardNumberString    valid card number stirng

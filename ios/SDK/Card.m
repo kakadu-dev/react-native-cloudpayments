@@ -127,6 +127,23 @@
     return ((oddSum + evenSum) % 10 == 0);
 }
 
++(BOOL) isExpiredValid: (NSString *) expiredString {
+    NSArray *cardDateComponents = [expiredString componentsSeparatedByString:@"/"];
+    
+    if ([cardDateComponents[0] integerValue] > 12) {
+        return NO;
+    }
+    
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
+    int shortYear = [components year] % 100;
+    
+    if ([cardDateComponents[1] integerValue] < shortYear) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 -(NSString *) makeCardCryptogramPacket: (NSString *) cardNumberString andExpDate: (NSString *) expDateString andCVV: (NSString *) CVVString andMerchantPublicID: (NSString *) merchantPublicIDString {
     
     // ExpDate must be in YYMM format

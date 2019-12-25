@@ -10,6 +10,8 @@
 		954FC90C20AADA700017B273 /* RNCloudPayments.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FC90B20AADA700017B273 /* RNCloudPayments.m */; };
 		954FC9F920AC08E60017B273 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FC9F620AC08E60017B273 /* Card.m */; };
 		954FC9FA20AC08E60017B273 /* NSDataENBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FC9F720AC08E60017B273 /* NSDataENBase64.m */; };
+		AE8EA39622A015910033E067 /* SDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8EA39522A015910033E067 /* SDWebViewController.m */; };
+		AEB012DB22A1835200B733D5 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB012DA22A1835100B733D5 /* NSString+URLEncoding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +34,11 @@
 		954FC9F620AC08E60017B273 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		954FC9F720AC08E60017B273 /* NSDataENBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataENBase64.m; sourceTree = "<group>"; };
 		954FC9F820AC08E60017B273 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		AE8EA39322A015910033E067 /* SDWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebViewController.h; sourceTree = "<group>"; };
+		AE8EA39422A015910033E067 /* SDWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebViewDelegate.h; sourceTree = "<group>"; };
+		AE8EA39522A015910033E067 /* SDWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebViewController.m; sourceTree = "<group>"; };
+		AEB012D922A1835100B733D5 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		AEB012DA22A1835100B733D5 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,10 +55,12 @@
 		954FC8FE20AADA700017B273 = {
 			isa = PBXGroup;
 			children = (
-				954FC9F420AC08D70017B273 /* SDK */,
-				954FC90B20AADA700017B273 /* RNCloudPayments.m */,
-				954FC90A20AADA700017B273 /* RNCloudPayments.h */,
+				AEB012D822A1835100B733D5 /* Extensions */,
 				954FC90820AADA700017B273 /* Products */,
+				954FC90A20AADA700017B273 /* RNCloudPayments.h */,
+				954FC90B20AADA700017B273 /* RNCloudPayments.m */,
+				954FC9F420AC08D70017B273 /* SDK */,
+				AE8EA39222A015910033E067 /* SDWebViewController */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +81,25 @@
 				954FC9F720AC08E60017B273 /* NSDataENBase64.m */,
 			);
 			path = SDK;
+			sourceTree = "<group>";
+		};
+		AE8EA39222A015910033E067 /* SDWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE8EA39422A015910033E067 /* SDWebViewDelegate.h */,
+				AE8EA39322A015910033E067 /* SDWebViewController.h */,
+				AE8EA39522A015910033E067 /* SDWebViewController.m */,
+			);
+			path = SDWebViewController;
+			sourceTree = "<group>";
+		};
+		AEB012D822A1835100B733D5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEB012D922A1835100B733D5 /* NSString+URLEncoding.h */,
+				AEB012DA22A1835100B733D5 /* NSString+URLEncoding.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,7 +136,7 @@
 				};
 			};
 			buildConfigurationList = 954FC90220AADA700017B273 /* Build configuration list for PBXProject "RNCloudPayments" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -129,6 +157,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB012DB22A1835200B733D5 /* NSString+URLEncoding.m in Sources */,
+				AE8EA39622A015910033E067 /* SDWebViewController.m in Sources */,
 				954FC90C20AADA700017B273 /* RNCloudPayments.m in Sources */,
 				954FC9F920AC08E60017B273 /* Card.m in Sources */,
 				954FC9FA20AC08E60017B273 /* NSDataENBase64.m in Sources */,
@@ -189,7 +219,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -241,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
